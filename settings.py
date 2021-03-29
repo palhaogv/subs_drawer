@@ -4,7 +4,6 @@ class Settings:
     def __init__(self):
         # Screen settings
         self.dropdown_style = {
-                    'background-color':'DodgerBlue',
                     'position': 'left',
                     'top': '14px',
                     'right': '0px',
@@ -12,7 +11,6 @@ class Settings:
                     'height': '0',
                     'border-color': 'transparent transparent #fff transparent',
                     'font-family': 'Helvetica',
-                    'color': 'DodgerBlue'
                     }
         self.div_style = {
                         'width': '100%', 

@@ -63,7 +63,7 @@ def selector(opt):
             phrase_slctd = RandomSelector().skin_select()[0]
             opt_slctd = RandomSelector().skin_select()[1]
         else:
-            phrase_slctd = f'SORTEADOR'
+            phrase_slctd = f'SELECIONE O SORTEADO!'
             opt_slctd = f''
 
     return phrase_slctd, opt_slctd
