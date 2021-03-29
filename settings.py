@@ -1,6 +1,3 @@
-import pygame
-
-
 class Settings:
     '''A class to manage all setting for our machine'''
 
