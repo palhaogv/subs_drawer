@@ -20,3 +20,7 @@ class Settings:
                         'color': 'DodgerBlue',
                         'font-size': '50px'
                         }
+    
+    
+
+
