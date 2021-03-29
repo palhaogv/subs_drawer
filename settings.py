@@ -3,14 +3,22 @@ class Settings:
 
     def __init__(self):
         # Screen settings
-        self.screen_width = 1200
-        self.screen_height = 800
-        self.initial_text_position = (50, 50)
-        self.question_position = (50, 100)
-        self.result_position = (50, 150)
-
-        #Color settings
-        self.light_blue = (135, 206, 235)
-        self.white = (255, 255, 255)
-        self.green = (0, 255, 0)
-        self.blue = (0, 0, 128)
+        self.dropdown_style = {
+                    'background-color':'DodgerBlue',
+                    'position': 'left',
+                    'top': '14px',
+                    'right': '0px',
+                    'width': '200px',
+                    'height': '0',
+                    'border-color': 'transparent transparent #fff transparent',
+                    'font-family': 'Helvetica',
+                    'color': 'DodgerBlue'
+                    }
+        self.div_style = {
+                        'width': '100%', 
+                        'text-align': 'center',
+                        'border-color': 'transparent transparent #fff transparent',
+                        'font-family': 'Helvetica',
+                        'color': 'DodgerBlue',
+                        'font-size': '50px'
+                        }

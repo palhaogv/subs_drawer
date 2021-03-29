@@ -20,40 +20,53 @@ app = dash.Dash(__name__)
 """App layout"""
 app.layout = html.Div([
     #Header
-    html.H1('ROLETA DE BANS E SKINS', style={'text-align': 'center', 'color': 'blue'}),
+    html.H1('ROLETA DE BANS E SKINS', style={'text-align': 'center', 'color': 'DodgerBlue'}),
 
     #Dropdown button
     dcc.Dropdown(id='slct_ban_skin',
                 options=[
-                    {'label':'ban', 'value':'ban'},
-                    {'label':'skin', 'value':'skin'}],
+                    {'label':'BAN', 'value':'ban'},
+                    {'label':'SKIN', 'value':'skin'}],
                 multi=False,
-                style={'width': '40%'}
+                style=Settings().dropdown_style
     ),
 
     html.Br(),
+    html.Br(),
+    html.Br(),
+    html.Br(),
+    html.Br(),
+    html.Br(),
+    html.Br(),
+
     #Drawer
-    html.Div(id='output_drawer', children=[])
+    html.Div(id='output_drawer', children=[], style=Settings().div_style),
+    html.Br(),
+    html.Div(id='output_slctd', children=[], style=Settings().div_style)
 ])
 
 
 """The call back: connecting the app components with the Plotly graphics"""
 @app.callback(
-    Output(component_id='output_drawer', component_property='children'),
+    [Output(component_id='output_drawer', component_property='children'),
+    Output(component_id='output_slctd', component_property='children')],
     Input(component_id='slct_ban_skin', component_property='value')
 )
 
 def selector(opt):
     if opt == 'ban':
-        opt_slcted = RandomSelector().ban_select()
+        phrase_slctd = RandomSelector().ban_select()[0]
+        opt_slctd = RandomSelector().ban_select()[1]
 
     else:
         if opt == 'skin':
-            opt_slcted = RandomSelector().skin_select()
+            phrase_slctd = RandomSelector().skin_select()[0]
+            opt_slctd = RandomSelector().skin_select()[1]
         else:
-            opt_slcted = f'SORTEADOR'
+            phrase_slctd = f'SORTEADOR'
+            opt_slctd = f''
 
-    return opt_slcted
+    return phrase_slctd, opt_slctd
 
 
 """Run server"""
