@@ -1,15 +1,22 @@
 import pandas as pd
-import os
-import numpy as np
-import sys
-import pygame
+
+import plotly.express as px
+import plotly.graph_objects as go
+
+import dash
+import dash_core_components as dcc
+import dash_html_components as html
+from dash.dependencies import Input, Output
+
 from settings import Settings
 from draw import RandomSelector
 
 class Program:
     def __init__(self):
         '''Initialize the program'''
-        pygame.init()
+        self.app = dash.Dash(__name__)
+        
+        '''pygame.init()
         self.settings = Settings()
 
         self.screen = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
@@ -24,7 +31,7 @@ class Program:
         #Initial text
         self.initial_text = self.settings.font.render('Olá, comédia! Como está voce?', True, self.settings.green, self.settings.blue)
         self.initial_text_rect = self.initial_text.get_rect()
-        self.initial_text_rect.topleft = self.settings.initial_text_position
+        self.initial_text_rect.topleft = self.settings.initial_text_position'''
 
     
     def run_program(self):
