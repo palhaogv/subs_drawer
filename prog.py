@@ -16,11 +16,11 @@ from draw import RandomSelector
 '''Starting the app'''
 app = dash.Dash(__name__)
 
-
 """App layout"""
-app.layout = html.Div([
+app.layout = html.Div(
+    [
     #Header
-    html.H1('ROLETA DE BANS E SKINS', style={'text-align': 'center', 'color': 'DodgerBlue'}),
+    html.H1('ROLETA DE BANS E SKINS', style={'text-align': 'center', 'color': 'black', 'font-family': 'Helvetica'}),
 
     #Dropdown button
     dcc.Dropdown(id='slct_ban_skin',
@@ -42,8 +42,10 @@ app.layout = html.Div([
     #Drawer
     html.Div(id='output_drawer', children=[], style=Settings().div_style),
     html.Br(),
-    html.Div(id='output_slctd', children=[], style=Settings().div_style)
-])
+    html.Div(id='output_slctd', children=[], style=Settings().div_style),
+
+    
+], style= Settings().background_style)
 
 
 """The call back: connecting the app components with the Plotly graphics"""

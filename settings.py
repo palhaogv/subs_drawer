@@ -17,9 +17,20 @@ class Settings:
                         'text-align': 'center',
                         'border-color': 'transparent transparent #fff transparent',
                         'font-family': 'Helvetica',
-                        'color': 'DodgerBlue',
+                        'color': 'black',
                         'font-size': '50px'
                         }
+        self.background_style = {
+            'background-image':'url("https://i.postimg.cc/7YGCh1Gy/image.png")', 
+            'height': '100%', 
+            'width': '100%',
+            'min-height': '1080', 
+            'min-width': '1920',
+            'max-height': '4000', 
+            'max-width': '4000',
+            'position':'absolute',
+            'background-repeat': 'no-repeat'
+        }
     
     
 
