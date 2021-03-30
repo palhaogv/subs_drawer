@@ -20,7 +20,7 @@ app = dash.Dash(__name__)
 app.layout = html.Div(
     [
     #Header
-    html.H1('ROLETA DE BANS E SKINS', style={'text-align': 'center', 'color': 'black', 'font-family': 'Helvetica'}),
+    html.H1('ROLETA DE BANS E SKINS', style=Settings().header_style),
 
     #Dropdown button
     dcc.Dropdown(id='slct_ban_skin',

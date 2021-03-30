@@ -3,6 +3,17 @@ class Settings:
 
     def __init__(self):
         # Screen settings
+        self.header_style = {
+                            'text-align': 'center', 
+                            'color': 'white', 
+                            'font-family': 'Helvetica',
+                            'background-color': 'dodgerblue',
+                            'top' : '0px',
+                            #'width': '100%',
+                            'margin' : '0px',
+                            'padding' : '0px',
+                            'border' : '0px'
+        }
         self.dropdown_style = {
                     'position': 'left',
                     'top': '14px',
@@ -17,19 +28,19 @@ class Settings:
                         'text-align': 'center',
                         'border-color': 'transparent transparent #fff transparent',
                         'font-family': 'Helvetica',
-                        'color': 'black',
+                        'color': 'dodgerblue',
                         'font-size': '50px'
                         }
         self.background_style = {
-            'background-image':'url("https://i.postimg.cc/7YGCh1Gy/image.png")', 
+            'background-image':'url("https://i.postimg.cc/TwHQGj6C/65.png")', 
+            'background-size' : 'cover',
             'height': '100%', 
             'width': '100%',
-            'min-height': '1080', 
-            'min-width': '1920',
-            'max-height': '4000', 
-            'max-width': '4000',
             'position':'absolute',
-            'background-repeat': 'no-repeat'
+            'background-repeat': 'no-repeat',
+            'margin' : '0px',
+            'padding' : '0px',
+            'border' : '0px'
         }
     
     
