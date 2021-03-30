@@ -12,7 +12,6 @@ from settings import Settings
 from draw import RandomSelector
 
 
-
 '''Starting the app'''
 app = dash.Dash(__name__)
 
@@ -20,7 +19,7 @@ app = dash.Dash(__name__)
 app.layout = html.Div(
     [
     #Header
-    html.H1('ROLETA DE BANS E SKINS', style=Settings().header_style),
+    html.H1('ROLETA DE BANS E SKINS DO BT0', style=Settings().header_style),
 
     #Dropdown button
     dcc.Dropdown(id='slct_ban_skin',
@@ -31,17 +30,11 @@ app.layout = html.Div(
                 style=Settings().dropdown_style
     ),
 
-    html.Br(),
-    html.Br(),
-    html.Br(),
-    html.Br(),
-    html.Br(),
-    html.Br(),
-    html.Br(),
+    html.Br(style=Settings().bracket_style1),
 
     #Drawer
     html.Div(id='output_drawer', children=[], style=Settings().div_style),
-    html.Br(),
+    html.Br(style=Settings().bracket_style2),
     html.Div(id='output_slctd', children=[], style=Settings().div_style),
 
     
