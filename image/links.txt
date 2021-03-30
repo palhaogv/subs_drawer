@@ -2,3 +2,7 @@ https://i.postimg.cc/7YGCh1Gy/image.png 100%
 https://i.postimg.cc/d1JgDjgF/80.png 80%
 https://i.postimg.cc/TwHQGj6C/65.png 65%
 https://i.postimg.cc/9QpnK7rN/50.png 50%
+
+GroldRounded-Black
+GroldRoundedSlim-Black
+GroldRoundedSlim-Bold

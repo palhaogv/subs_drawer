@@ -34,11 +34,12 @@ app.layout = html.Div(
 
     #Drawer
     html.Div(id='output_drawer', children=[], style=Settings().div_style),
+
     html.Br(style=Settings().bracket_style2),
+
     html.Div(id='output_slctd', children=[], style=Settings().div_style),
 
-    
-], style= Settings().background_style)
+    ], style= Settings().background_style)
 
 
 """The call back: connecting the app components with the Plotly graphics"""
