@@ -1,8 +1,3 @@
-import pandas as pd
-
-import plotly.express as px
-import plotly.graph_objects as go
-
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -33,36 +28,43 @@ app.layout = html.Div(
     html.Br(style=Settings().bracket_style1),
 
     #Drawer
-    html.Div(id='output_drawer', children=[], style=Settings().div_style),
+    html.Div(id='output_drawer', children=[], style=Settings().div_style1),
 
     html.Br(style=Settings().bracket_style2),
 
-    html.Div(id='output_slctd', children=[], style=Settings().div_style),
+    html.Div(id='output_slctd_ban', children=[], style=Settings().div_style_ban),
+    html.Div(id='output_slctd_skin', children=[], style=Settings().div_style_skin),
 
     ], style= Settings().background_style)
 
 
-"""The call back: connecting the app components with the Plotly graphics"""
+"""Connecting the app components with the machine functions"""
 @app.callback(
     [Output(component_id='output_drawer', component_property='children'),
-    Output(component_id='output_slctd', component_property='children')],
+    Output(component_id='output_slctd_ban', component_property='children'),
+    Output(component_id='output_slctd_skin', component_property='children')],
     Input(component_id='slct_ban_skin', component_property='value')
 )
 
 def selector(opt):
     if opt == 'ban':
         phrase_slctd = RandomSelector().ban_select()[0]
-        opt_slctd = RandomSelector().ban_select()[1]
+        opt_slctd_ban = RandomSelector().ban_select()[1]
+        opt_slctd_skin = ''
+        print(f'Olá, {opt_slctd_ban}, a máquina de bans e skins te sorteou, voce está banido!')
 
     else:
         if opt == 'skin':
             phrase_slctd = RandomSelector().skin_select()[0]
-            opt_slctd = RandomSelector().skin_select()[1]
+            opt_slctd_skin = RandomSelector().skin_select()[1]
+            opt_slctd_ban = ''
+            print(f'Olá, {opt_slctd_skin}, a máquina de bans e skins te sorteou, voce acaba de ganhar uma SKIN! Parabéns, me responda com seu tradelink para que eu possa te envia-la.')
         else:
             phrase_slctd = f'SELECIONE O SORTEADO!'
-            opt_slctd = f''
+            opt_slctd_ban = f''
+            opt_slctd_skin = f''
 
-    return phrase_slctd, opt_slctd
+    return phrase_slctd, opt_slctd_ban, opt_slctd_skin
 
 
 """Run server"""
